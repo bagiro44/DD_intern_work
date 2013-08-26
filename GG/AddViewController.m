@@ -44,6 +44,22 @@
 {
         [self dismissViewControllerAnimated:YES completion:nil];
 }
+- (BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender
+{
+    if ([[DBClient sharedInstance] searchElementByTitle:self.addFilmTitle.text])
+    {
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Ошибка" message:@"Данный фильм уже существует в базе данных" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
+        [alertView show];
+        return NO;
+    }
+    if (self.addFilmTitle.text.length == 0)
+    {
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Ошибка" message:@"Название фильма не введено..." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
+        [alertView show];
+        return NO;
+    }
+    return YES;
+}
 
 - (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {

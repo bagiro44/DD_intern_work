@@ -22,14 +22,20 @@
 		775E36BC17C90A1900A51123 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 775E36BB17C90A1900A51123 /* Default-568h@2x.png */; };
 		775E36BF17C90A1900A51123 /* GG.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 775E36BD17C90A1900A51123 /* GG.xcdatamodeld */; };
 		775E36C917C90AA800A51123 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 775E36C817C90AA800A51123 /* Storyboard.storyboard */; };
-		775E36CF17C90CCD00A51123 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 775E36CE17C90CCD00A51123 /* ViewController.m */; };
 		775E36D217C90E0E00A51123 /* FavViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 775E36D117C90E0E00A51123 /* FavViewController.m */; };
 		775E36D517C9123300A51123 /* DBClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 775E36D417C9123300A51123 /* DBClient.m */; };
 		775E36D817C9199200A51123 /* FilmCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 775E36D717C9199200A51123 /* FilmCell.m */; };
 		775E36DB17C91F1500A51123 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 775E36DA17C91F1500A51123 /* DetailViewController.m */; };
 		775E36DE17C9399400A51123 /* AddViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 775E36DD17C9399400A51123 /* AddViewController.m */; };
-		775E36E517C93BD500A51123 /* EditController.m in Sources */ = {isa = PBXBuildFile; fileRef = 775E36E417C93BD400A51123 /* EditController.m */; };
 		77DC44A717CAF1DA004896AB /* Films.m in Sources */ = {isa = PBXBuildFile; fileRef = 77DC44A617CAF1DA004896AB /* Films.m */; };
+		77DC44AA17CAF5D5004896AB /* fav.png in Resources */ = {isa = PBXBuildFile; fileRef = 77DC44A817CAF5D5004896AB /* fav.png */; };
+		77DC44AB17CAF5D5004896AB /* film.png in Resources */ = {isa = PBXBuildFile; fileRef = 77DC44A917CAF5D5004896AB /* film.png */; };
+		77DC44AE17CAF5E3004896AB /* EditController.m in Sources */ = {isa = PBXBuildFile; fileRef = 77DC44AD17CAF5E3004896AB /* EditController.m */; };
+		77DC44B117CAF5ED004896AB /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 77DC44B017CAF5ED004896AB /* ViewController.m */; };
+		77DC44B317CAFAE4004896AB /* empyImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 77DC44B217CAFAE4004896AB /* empyImage.png */; };
+		77DC44B917CB8F7E004896AB /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = 77DC44B617CB8F7E004896AB /* background.png */; };
+		77DC44BA17CB8F7E004896AB /* background-568@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 77DC44B717CB8F7E004896AB /* background-568@2x.png */; };
+		77DC44BB17CB8F7E004896AB /* background@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 77DC44B817CB8F7E004896AB /* background@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,8 +58,6 @@
 		775E36BB17C90A1900A51123 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		775E36BE17C90A1900A51123 /* GG.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = GG.xcdatamodel; sourceTree = "<group>"; };
 		775E36C817C90AA800A51123 /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
-		775E36CD17C90CCD00A51123 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ViewController.h; path = ../ViewController.h; sourceTree = "<group>"; };
-		775E36CE17C90CCD00A51123 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ViewController.m; path = ../ViewController.m; sourceTree = "<group>"; };
 		775E36D017C90E0E00A51123 /* FavViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FavViewController.h; sourceTree = "<group>"; };
 		775E36D117C90E0E00A51123 /* FavViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FavViewController.m; sourceTree = "<group>"; };
 		775E36D317C9123300A51123 /* DBClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBClient.h; sourceTree = "<group>"; };
@@ -64,10 +68,18 @@
 		775E36DA17C91F1500A51123 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		775E36DC17C9399300A51123 /* AddViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddViewController.h; sourceTree = "<group>"; };
 		775E36DD17C9399400A51123 /* AddViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddViewController.m; sourceTree = "<group>"; };
-		775E36E317C93BD400A51123 /* EditController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EditController.h; path = ../EditController.h; sourceTree = "<group>"; };
-		775E36E417C93BD400A51123 /* EditController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EditController.m; path = ../EditController.m; sourceTree = "<group>"; };
 		77DC44A517CAF1DA004896AB /* Films.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Films.h; sourceTree = "<group>"; };
 		77DC44A617CAF1DA004896AB /* Films.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Films.m; sourceTree = "<group>"; };
+		77DC44A817CAF5D5004896AB /* fav.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fav.png; sourceTree = "<group>"; };
+		77DC44A917CAF5D5004896AB /* film.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = film.png; sourceTree = "<group>"; };
+		77DC44AC17CAF5E3004896AB /* EditController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditController.h; sourceTree = "<group>"; };
+		77DC44AD17CAF5E3004896AB /* EditController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditController.m; sourceTree = "<group>"; };
+		77DC44AF17CAF5ED004896AB /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		77DC44B017CAF5ED004896AB /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		77DC44B217CAFAE4004896AB /* empyImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = empyImage.png; sourceTree = "<group>"; };
+		77DC44B617CB8F7E004896AB /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background.png; sourceTree = "<group>"; };
+		77DC44B717CB8F7E004896AB /* background-568@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "background-568@2x.png"; sourceTree = "<group>"; };
+		77DC44B817CB8F7E004896AB /* background@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "background@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,19 +128,19 @@
 		775E36AB17C90A1900A51123 /* GG */ = {
 			isa = PBXGroup;
 			children = (
+				77DC44AF17CAF5ED004896AB /* ViewController.h */,
+				77DC44B017CAF5ED004896AB /* ViewController.m */,
 				775E36B417C90A1900A51123 /* AppDelegate.h */,
+				77DC44AC17CAF5E3004896AB /* EditController.h */,
+				77DC44AD17CAF5E3004896AB /* EditController.m */,
 				775E36B517C90A1900A51123 /* AppDelegate.m */,
 				775E36C817C90AA800A51123 /* Storyboard.storyboard */,
-				775E36CD17C90CCD00A51123 /* ViewController.h */,
-				775E36CE17C90CCD00A51123 /* ViewController.m */,
 				775E36D017C90E0E00A51123 /* FavViewController.h */,
 				775E36D117C90E0E00A51123 /* FavViewController.m */,
 				775E36D917C91F1500A51123 /* DetailViewController.h */,
 				775E36DA17C91F1500A51123 /* DetailViewController.m */,
 				775E36DC17C9399300A51123 /* AddViewController.h */,
 				775E36DD17C9399400A51123 /* AddViewController.m */,
-				775E36E317C93BD400A51123 /* EditController.h */,
-				775E36E417C93BD400A51123 /* EditController.m */,
 				77DC44A517CAF1DA004896AB /* Films.h */,
 				77DC44A617CAF1DA004896AB /* Films.m */,
 				775E36BD17C90A1900A51123 /* GG.xcdatamodeld */,
@@ -159,6 +171,12 @@
 		77B2243517C944E5001A2FC6 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				77DC44B617CB8F7E004896AB /* background.png */,
+				77DC44B717CB8F7E004896AB /* background-568@2x.png */,
+				77DC44B817CB8F7E004896AB /* background@2x.png */,
+				77DC44B217CAFAE4004896AB /* empyImage.png */,
+				77DC44A817CAF5D5004896AB /* fav.png */,
+				77DC44A917CAF5D5004896AB /* film.png */,
 				7717D76417CAE80F0080A53B /* hel1.png */,
 				7717D75C17CAE5FC0080A53B /* greyStar.png */,
 				7717D75D17CAE5FC0080A53B /* yellowStar.png */,
@@ -225,6 +243,12 @@
 				7717D75E17CAE5FC0080A53B /* greyStar.png in Resources */,
 				7717D75F17CAE5FC0080A53B /* yellowStar.png in Resources */,
 				7717D76517CAE80F0080A53B /* hel1.png in Resources */,
+				77DC44AA17CAF5D5004896AB /* fav.png in Resources */,
+				77DC44AB17CAF5D5004896AB /* film.png in Resources */,
+				77DC44B317CAFAE4004896AB /* empyImage.png in Resources */,
+				77DC44B917CB8F7E004896AB /* background.png in Resources */,
+				77DC44BA17CB8F7E004896AB /* background-568@2x.png in Resources */,
+				77DC44BB17CB8F7E004896AB /* background@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -238,14 +262,14 @@
 				775E36B217C90A1900A51123 /* main.m in Sources */,
 				775E36B617C90A1900A51123 /* AppDelegate.m in Sources */,
 				775E36BF17C90A1900A51123 /* GG.xcdatamodeld in Sources */,
-				775E36CF17C90CCD00A51123 /* ViewController.m in Sources */,
 				775E36D217C90E0E00A51123 /* FavViewController.m in Sources */,
 				775E36D517C9123300A51123 /* DBClient.m in Sources */,
 				775E36D817C9199200A51123 /* FilmCell.m in Sources */,
 				775E36DB17C91F1500A51123 /* DetailViewController.m in Sources */,
 				775E36DE17C9399400A51123 /* AddViewController.m in Sources */,
-				775E36E517C93BD500A51123 /* EditController.m in Sources */,
 				77DC44A717CAF1DA004896AB /* Films.m in Sources */,
+				77DC44AE17CAF5E3004896AB /* EditController.m in Sources */,
+				77DC44B117CAF5ED004896AB /* ViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

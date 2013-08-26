@@ -120,6 +120,21 @@
         return NO;
     }
 }
+- (BOOL *) searchElementByTitle:(NSString *)title
+{
+    NSArray *films = nil;
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    [fetchRequest setEntity:[NSEntityDescription entityForName:@"Films" inManagedObjectContext:self.ManagedObjectContext]];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"titile == %@", title];
+    [fetchRequest setPredicate:predicate];
+    NSError *error;
+    films = [self.ManagedObjectContext executeFetchRequest:fetchRequest error:&error];
+    if ([films count])
+    {
+        return YES;
+    }
+    return NO;
+}
 
 - (BOOL *) deleteFilm:(Films *)film
 {

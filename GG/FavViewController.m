@@ -30,6 +30,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.navigationController.navigationBar.barStyle = UIBarStyleBlack;
+    [self.tableView setBackgroundColor:[UIColor clearColor]];
     [[NSNotificationCenter defaultCenter] removeObserver:self name:@"updateLeftTable" object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(checkRes:) name:@"updateLeftTable"
     object:nil];

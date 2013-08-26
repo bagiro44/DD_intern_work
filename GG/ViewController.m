@@ -30,18 +30,12 @@
 
 - (void)viewDidLoad
 {
-    [super viewDidLoad];
-    
+    [super viewDidLoad];    
     [[NSNotificationCenter defaultCenter] removeObserver:self name:@"updateRightTable" object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(checkRes:) name:@"updateRightTable"
     object:nil];
-    /*int sections = [self.tableView numberOfSections];
-    BOOL hasRows = NO;
-    for (int i = 0; i < sections; i++)
-        hasRows = ([self.tableView numberOfRowsInSection:i] > 0) ? YES : NO;
-    if (sections == 0 || hasRows == NO)
-    {}*/
-
+    self.navigationController.navigationBar.barStyle = UIBarStyleBlackOpaque;
+    [self.tableView setBackgroundColor:[UIColor clearColor]];
 }
 
 -(void)checkRes:(NSNotification *)notification
@@ -113,15 +107,11 @@
     {
         if (indexPath.row < [self.film count])
         {
-            NSLog(@"%@", film.description);
             [[DBClient sharedInstance] deleteFilm:[film objectAtIndex:indexPath.row]];
             [self.film removeObjectAtIndex:indexPath.row];
             [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationLeft];
         }
     }
-}
-
-- (IBAction)helpToApp:(id)sender {
 }
 
 - (void) refreshData

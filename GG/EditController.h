@@ -24,6 +24,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *genre;
 @property NSInteger *genreNumber;
 @property NSData *imageData;
+@property NSString *filmtitle;
+@property BOOL *errorFilm;
 
 @property Films *film;
 - (IBAction)editGenre:(id)sender;

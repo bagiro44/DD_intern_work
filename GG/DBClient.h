@@ -25,6 +25,7 @@
 - (BOOL *) deleteFilm:(Films *)film;
 - (BOOL *) reloadData;
 - (BOOL *) refreshData;
+- (BOOL *) searchElementByTitle:(NSString *)title;
 
 
 @end

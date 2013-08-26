@@ -39,7 +39,6 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(checkRes:) name:@"updateDetail"
                                                object:nil];
     
-        NSLog(@"test");
     self.title = self.filmDetail.titile;
     self.filmGenre.text = self.filmDetail.genre;
     self.filmYear.text = self.filmDetail.year;

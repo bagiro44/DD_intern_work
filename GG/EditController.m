@@ -27,8 +27,12 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+
+    //UIImage *backGroundImage = [UIImage imageNamed:@"background"];
+    //[self.view setBackgroundColor:[UIColor colorWithPatternImage:backGroundImage]];
+
     self.genreNumber = 7;
-    self.genreArray = [[NSArray alloc] initWithObjects:@"18+", @"Аниме", @"Биография", @"Боевик", @"Вестерн", @"Военный", @"Детектив", @"Детский", @"Документальный", @"Драма", @"Игра", @"История", @"Комедия", @"Концерт", @"Короткометражка", @"Криминал", @"Мелодрама", @"Музыка", @"Мультфиль", @"Мюзикл", @"Новости", @"Приключения", @"Семейный", @"Спорт", @"Ток-шоу", @"Триллер", @"Ужасы", @"Фантастика", @"Фентези", @"ТВ", nil];
+    self.genreArray = [[NSArray alloc] initWithObjects:@"18+", @"Аниме", @"Биография", @"Боевик", @"Вестерн", @"Военный", @"Детектив", @"Детский", @"Документальный", @"Драма", @"Игра", @"История", @"Комедия", @"Концерт", @"Короткометражка", @"Криминал", @"Мелодрама", @"Музыка", @"Мультфильм", @"Мюзикл", @"Новости", @"Приключения", @"Семейный", @"Сериал", @"Спорт", @"Ток-шоу", @"Триллер", @"Ужасы", @"Фантастика", @"Фентези", @"ТВ", nil];
     for (int i=0; i < [self.genreArray count]; i++)
     {
         if ([[self.genreArray objectAtIndex:i] isEqual:film.genre])
@@ -42,12 +46,17 @@
     pickerController.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
     
     (film.titile)?self.editTitle.text = film.titile:nil;
+    self.filmtitle = film.titile;
     (film.year)?self.editYear.text = film.year:nil;
     (film.descriptionfilm)?self.editDescription.text = film.descriptionfilm:nil;
     (film.genre)?self.genre.text = film.genre:nil;
-    [self.editFilmImage setHidden:NO];
-    UIImage *image = [UIImage imageWithData:film.image];
-    self.editFilmImage.image = image;
+    if (film.image)
+    {
+        self.imageData = film.image;
+        self.editFilmImage.image = [UIImage imageWithData:film.image];
+        self.filmImage = [UIImage imageWithData:film.image];
+    }
+    
 }
 
 - (BOOL) textFieldShouldReturn:(UITextField *)textField
@@ -108,34 +117,78 @@
     [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
 }
 
+- (BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender
+{
+    if (self.errorFilm)
+    {
+        return NO;
+    }
+    return YES;
+}
+
+
 - (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    [segue.destinationViewController setFilmDetail:film];
-    if(![[DBClient sharedInstance] insertToDB:film])
+    //[segue.destinationViewController setFilmDetail:film];
+    /*if(![[DBClient sharedInstance] insertToDB:film])
     {
         UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Ошибка" message:@"Не удалось добавить фильм в избранное..." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
         [alertView show];
-    }
+    }*/
     
 }
 
-- (IBAction)saveEditing:(id)sender
+- (void) saveFilm
 {
-    //[segue.destinationViewController setFilmDetail:film];
     film.titile = self.editTitle.text;
     film.year = self.editYear.text;
     film.genre = self.genre.text;
     film.descriptionfilm = self.editDescription.text;
     film.image = self.imageData ;
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"updateDetail" object:self];
     if(![[DBClient sharedInstance] insertToDB:film])
     {
         UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Ошибка" message:@"Не удалось добавить фильм в избранное..." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
         [alertView show];
     }
+    self.errorFilm = 0;
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"updateDetail" object:self];
     [self.presentingViewController.presentingViewController dismissViewControllerAnimated:YES completion:nil];
     [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
 }
+
+- (IBAction)saveEditing:(id)sender
+{
+    UIAlertView *alertView2 = [[UIAlertView alloc] initWithTitle:@"Ошибка" message:@"Неверный формат ввода года (Пример верного ввода: 1985)" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
+    if (([self.editYear.text intValue] && self.editYear.text.length == 4) || self.editYear.text.length == 0)
+    {
+        if ([self.filmtitle isEqual:self.editTitle.text])
+        {
+            [self saveFilm];
+            
+        }else
+        {
+            if (![[DBClient sharedInstance] searchElementByTitle:self.editTitle.text])
+            {
+                [self saveFilm];
+            }
+            else
+            {
+                UIAlertView *alertView1 = [[UIAlertView alloc] initWithTitle:@"Ошибка" message:@"Данный фильм уже существует в базе данных" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
+                [alertView1 show];
+                self.errorFilm = 1;
+            }
+        }
+
+    }
+    else
+    {
+        [alertView2 show];
+    }
+    
+}
+
+#pragma chooseImage
+#pragma -
 
 - (IBAction)editImage:(id)sender
 {
